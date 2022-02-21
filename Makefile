@@ -1,9 +1,13 @@
 APPNAME = investing
 
 SRCS += main.cpp
+SRCS += source/dbg.cpp
 
 all:
-	g++ $(SRCS) -o $(APPNAME)
+	g++ -Wall $(SRCS) -o $(APPNAME)
 
 clean:
 	rm -f $(APPNAME)
+
+debug:
+	g++ -Wall $(SRCS) -o $(APPNAME) -DDEBUG
