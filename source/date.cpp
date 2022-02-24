@@ -21,6 +21,9 @@ std::string Date::toString(){
     std::string result = "";
     result += std::to_string(_day);
     result += ".";
+    if ((_month / 10) == 0){
+        result += "0";   
+    }
     result += std::to_string(_month);
     result += ".";
     result += std::to_string(_year);
