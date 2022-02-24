@@ -72,3 +72,79 @@ void Date::setDate(std::string _date){
     }
     verification(_d, _m, _y);
 }
+
+bool Date::operator== (const Date &_other) const{
+    return ((this->_year == _other._year) && 
+            (this->_month == _other._month) &&
+            (this->_day == _other._day));
+}
+
+bool Date::operator!= (const Date &_other) const{
+    return !(*this == _other);
+}
+
+bool Date::operator< (const Date &_other) const{
+    if (this->_year < _other._year){
+        return true;
+    }
+    else{
+        if (this->_year == _other._year){
+            if (this->_month < _other._month){
+                return true;
+            }
+            else{
+                if (this->_month == _other._month){
+                    if (this->_day < _other._day){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+bool Date::operator>= (const Date &_other) const{
+    return !(*this < _other);
+}
+
+bool Date::operator> (const Date &_other) const{
+    if (this->_year > _other._year){
+        return true;
+    }
+    else{
+        if (this->_year == _other._year){
+            if (this->_month > _other._month){
+                return true;
+            }
+            else{
+                if (this->_month == _other._month){
+                    if (this->_day > _other._day){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+bool Date::operator<= (const Date &_other) const{
+    return ! (*this > _other);
+}

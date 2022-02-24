@@ -16,6 +16,13 @@ class Date {
         void setDate(unsigned int _d, unsigned int _m, unsigned int _y);
         void setDate(std::string _date);
         std::string toString();
+        bool operator== (const Date &_other) const;
+        bool operator!= (const Date &_other) const;
+        bool operator< (const Date &_other) const;
+        bool operator>= (const Date &_other) const;
+        bool operator> (const Date &_other) const;
+        bool operator<= (const Date &_other) const;
+
 };
 
 #endif
